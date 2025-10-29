@@ -20,6 +20,9 @@ client.on('ready', () => {
   console.log(`${client.user.tag} is online!`);
 });
 
+// Automatically register slash commands when bot starts
+require('./deploy-commands');
+
 client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand()) return;
   const userId = interaction.user.id;
